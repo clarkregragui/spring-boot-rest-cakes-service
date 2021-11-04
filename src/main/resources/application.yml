@@ -33,6 +33,6 @@ spring:
 logging:
   level: 
       root: DEBUG
-      com.riggy.exercise.cakes: DEBUG
+      com.riggy.example.cakes: DEBUG
                       
                                 
