@@ -25,6 +25,7 @@ Spring Data JPA
 Spring Security 5 (OAuth2 for Github)
 Spring OpenApi (Swagger 3)
 Spring Freemarker
+Java Bean Validation
 H2DB
 Spring Test
 Junit5
