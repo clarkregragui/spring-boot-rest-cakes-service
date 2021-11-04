@@ -26,28 +26,6 @@ import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 
 @ControllerAdvice
 public class GlobalExceptionHandling extends ResponseEntityExceptionHandler {
-//
-//    @ExceptionHandler(TeacherNotFoundException.class)
-//    public ResponseEntity<Object> handleExceptions( TeacherNotFoundException exception, WebRequest webRequest) {
-//        ExceptionResponse response = new ExceptionResponse();
-//        response.setDateTime(LocalDateTime.now());
-//        response.setMessage("Not found");
-//        ResponseEntity<Object> entity = new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
-//        return entity;
-//    }
-	
-//    @Override
-//	protected ResponseEntity<Object> handleMethodArgumentNotValid(
-//			MethodArgumentNotValidException e, HttpHeaders headers, HttpStatus status, WebRequest request) {
-//		
-//        Map<String, String> errors = new HashMap<>();
-//        e.getBindingResult().getAllErrors().forEach((error) -> {
-//            String fieldName = ((FieldError) error).getField();
-//            String errorMessage = error.getDefaultMessage();
-//            errors.put(fieldName, errorMessage);
-//        });
-//        return new ResponseEntity<>(errors,HttpStatus.BAD_REQUEST);
-//    }
 	
 
 	  @ExceptionHandler(ConstraintViolationException.class)
@@ -80,13 +58,6 @@ public class GlobalExceptionHandling extends ResponseEntityExceptionHandler {
 	    return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
 	  }
 	  
-//	  @ExceptionHandler(UnrecognizedPropertyException.class)
-//	  @ResponseStatus(HttpStatus.BAD_REQUEST)
-//	  @ResponseBody
-//	  String onUnrecognizedPropertyException(UnrecognizedPropertyException e) {
-//
-//		  return e.getMessage();
-//	  }
 	  
 	  @Override
 	  protected ResponseEntity<Object> handleHttpMessageNotReadable(
