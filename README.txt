@@ -9,7 +9,7 @@ Github Actions script used for CI, Docker Image building and CD of image to Dock
 
 GitHub
 
-https://github.com/clarkregragui/cake-manager
+https://github.com/clarkregragui/spring-boot-rest-cakes-service
 
 DockerHub
 
