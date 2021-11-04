@@ -15,8 +15,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          .anyRequest().authenticated()
          .and()
          .oauth2Login();
-            
-        http.httpBasic().disable().formLogin().disable();
-    	
+        
     }
 }
