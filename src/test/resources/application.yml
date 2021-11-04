@@ -1,0 +1,30 @@
+
+  # Spring Data JPA configuration
+  
+server:
+  error: 
+    include-message: always
+      
+spring:
+  profiles:
+    active: test
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+    
+  jackson:
+    serialization:
+      indent_output: true
+    deserialization:
+      fail-on-unknown-properties: true
+  
+logging:
+  level: 
+      root: INFO
+      com.waracle.cakes: DEBUG
+      org.apache.camel: DEBUG
+    

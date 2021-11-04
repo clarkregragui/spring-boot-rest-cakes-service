@@ -1,0 +1,38 @@
+
+  # Spring Data JPA configuration
+  
+server:
+  error: 
+    include-message: always
+      
+spring:
+  profiles:
+    active: prod
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+    
+  jackson:
+    serialization:
+      indent_output: true
+    deserialization:
+      fail-on-unknown-properties: true
+      
+  Security:
+        oauth2:
+            client:
+                registration:
+                    github:
+                       clientId: b70d431814e6d107934d
+                       clientSecret: 9dd51deb2f8a55fe0ee7856176499c882f608281
+                       
+logging:
+  level: 
+      root: DEBUG
+      com.riggy.exercise.cakes: DEBUG
+                      
+                                
