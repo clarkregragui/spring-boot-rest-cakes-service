@@ -24,7 +24,6 @@ spring:
   
 logging:
   level: 
-      root: INFO
-      com.waracle.cakes: DEBUG
-      org.apache.camel: DEBUG
+      root: DEBUG
+      com.riggy.example.cakes: DEBUG
     
