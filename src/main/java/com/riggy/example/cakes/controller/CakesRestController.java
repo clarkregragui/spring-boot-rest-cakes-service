@@ -50,27 +50,4 @@ public class CakesRestController {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Integrity constraint violated", e);
 		}
 	}
-	
-//	onException(JsonParseException.class, UnrecognizedPropertyException.class, 
-//			IllegalArgumentException.class, DataIntegrityViolationException.class)
-//		.setHeader(Exchange.HTTP_RESPONSE_CODE, constant(400))
-//		.setBody(constant("400 Bad Request"))
-//		.handled(true)
-//		.log(LoggingLevel.ERROR, "${exchangeProperty[CamelExceptionCaught]}")
-//		.end();
-//	onException(Exception.class)
-//		.setHeader(Exchange.HTTP_RESPONSE_CODE, constant(500))
-//		.setBody(constant("500 Server error"))
-//		.handled(true)
-//		.log(LoggingLevel.ERROR, "${exchangeProperty[CamelExceptionCaught]}")
-//		.end();
-	
-//	.get("/cakes").outType(CakeDTO[].class)
-//	.route().routeId("list-cakes-api")
-//		.bean(CakeService.class, "findCakes")
-//	.endRest()
-//.post("/cakes").type(CakeDTO.class)
-//	.route().routeId("create-cake-api")
-//		.bean(CakeService.class, "createCake(${body})")
-//		.setHeader(Exchange.HTTP_RESPONSE_CODE, constant(201));
 }
