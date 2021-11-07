@@ -10,6 +10,7 @@ import java.util.stream.StreamSupport;
 import javax.annotation.PostConstruct;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
@@ -36,10 +37,15 @@ public class CakeServiceImpl implements CakeService {
 	public List<CakeDTO> findCakes() {
 		Iterable<Cake> cakes = cakeRepository.findAll();
 		
-		List<CakeDTO> cakeDtoList = 
-				StreamSupport.stream(cakes.spliterator(), false)
-				  .map(cake -> modelMapper.map(cake, CakeDTO.class))
-				  .collect(Collectors.toList());
+//		List<CakeDTO> cakeDtoList = 
+//				StreamSupport.stream(cakes.spliterator(), false)
+//				  .map(cake -> modelMapper.map(cake, CakeDTO.class))
+//				  .collect(Collectors.toList());
+
+//Alternative ModelMapper mapping Lists option		
+		java.lang.reflect.Type listType = new TypeToken<List<CakeDTO>>() {}.getType();
+		List<CakeDTO> cakeDtoList = new ModelMapper().map(cakes, listType);
+		
 		return cakeDtoList;
 	}
 
